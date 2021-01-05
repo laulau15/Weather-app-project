@@ -109,6 +109,7 @@ h1:hover {
   padding: 10px 5px;
   border: 1px solid grey;
   border-radius: 30px;
+  font-family: "Raleway", sans-serif;
 }
 .click,
 .btn-location {
@@ -129,6 +130,7 @@ h1:hover {
   box-shadow: 0 0 0 0 #000;
   animation: pulse 1.3s infinite;
   font-family: "Raleway", sans-serif;
+  font-size: 14px;
 }
 @keyframes pulse {
   to {
