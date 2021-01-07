@@ -85,7 +85,7 @@ body {
   display: block;
   margin: 0 auto;
   margin-top: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 10px;
   font-family: "Archivo Black", sans-serif;
   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
@@ -108,12 +108,12 @@ h1:hover {
   margin-bottom: 10px;
   padding: 10px 5px;
   border: 1px solid grey;
-  border-radius: 30px;
+  border-radius: 10px;
   font-family: "Raleway", sans-serif;
 }
 .click,
 .btn-location {
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 10px 15px;
   background-image: linear-gradient(
     to top,
@@ -150,7 +150,7 @@ h1:hover {
 }
 .place-element {
   border: 1px solid grey;
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 5px 10px;
   transition: all 200ms ease-in-out;
   cursor: pointer;
@@ -205,13 +205,15 @@ a:hover {
 }
 h2 {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 .cards-forecast {
   text-align: center;
 }
 .col {
   border: 0.5px solid grey;
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 3px;
   margin: 5px;
   font-family: "Raleway", sans-serif;
