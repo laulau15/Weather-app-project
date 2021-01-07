@@ -81,7 +81,7 @@ body {
   background-size: 278px 278px;
 }
 .app-style {
-  width: 65%;
+  max-width: 700px;
   display: block;
   margin: 0 auto;
   margin-top: 10px;
@@ -158,6 +158,15 @@ h1:hover {
 .place-element:hover {
   box-shadow: 3px 3px 6px 3px rgba(24, 22, 24, 0.8);
 }
+ul {
+  padding: 0px;
+  margin-bottom: 2px;
+  margin-top: 3px;
+}
+li {
+  list-style: none;
+}
+
 .place {
   font-size: 35px;
 }
@@ -166,10 +175,9 @@ h1:hover {
 }
 .place-situation {
   text-align: right;
-  font-size: 25px;
   position: relative;
-  bottom: 100px;
-  right: 10px;
+  top: 16px;
+  font-size: 25px;
 }
 #weather-aspect {
   text-transform: capitalize;
@@ -197,10 +205,8 @@ a:hover {
 }
 h2 {
   text-align: center;
-  position: relative;
-  top: -30px;
 }
-.row {
+.cards-forecast {
   text-align: center;
 }
 .col {
