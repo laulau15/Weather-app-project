@@ -13,7 +13,7 @@ body {
 h1 {
   text-align: center;
   font-family: "Amaranth", sans-serif;
-  font-size: 45px;
+  font-size: 48px;
   margin: 10px;
   padding: 10px 15px 0px;
   transition: 200ms all ease-in-out;
@@ -24,34 +24,28 @@ h1:hover {
 }
 #search-engine {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 10px;
   padding: 10px 15px;
-  border: 1px solid grey;
+  border: 1px solid #dfe9f3;
   border-radius: 10px;
   font-family: "Raleway", sans-serif;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 .click,
 .btn-location {
   border-radius: 20px;
   padding: 10px 15px;
-  background-image: linear-gradient(
-    to top,
-    lightgrey 0%,
-    lightgrey 1%,
-    #e0e0e0 26%,
-    #efefef 48%,
-    #d9d9d9 75%,
-    #bcbcbc 100%
-  );
-  border: 1px solid gray;
+  border: 1px solid #dfe9f3;
   transition: 200ms all ease-in-out;
   margin-bottom: 20px;
   margin-right: 5px;
   box-shadow: 0 0 0 0 #000;
   animation: pulse 1.3s infinite;
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
   font-size: 14px;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 @keyframes pulse {
   to {
@@ -61,23 +55,18 @@ h1:hover {
 
 .click:hover,
 .btn-location:hover {
-  background: linear-gradient(-180deg, #bcc5ce 0%, #929ead 98%),
-    radial-gradient(
-      at top left,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-  background-blend-mode: screen;
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
 }
 .place-element {
-  border: 1px solid grey;
+  border: 1px solid #dfe9f3;
   border-radius: 20px;
   padding: 5px 10px;
   transition: all 200ms ease-in-out;
   cursor: pointer;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 .place-element:hover {
-  box-shadow: 3px 3px 6px 3px rgba(24, 22, 24, 0.8);
+  box-shadow: 3px 3px 6px 3px rgba(57, 62, 65, 0.5);
 }
 ul {
   padding: 0px;
@@ -134,7 +123,7 @@ h2 {
   text-align: center;
 }
 .col {
-  border: 0.5px solid grey;
+  border: 0.5px solid #dfe9f3;
   border-radius: 20px;
   padding: 3px;
   margin: 5px;
@@ -144,9 +133,10 @@ h2 {
   transition: all 200ms ease-in-out;
   cursor: pointer;
   display: inline-table;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 .col:hover {
-  box-shadow: 3px 3px 6px 3px rgba(24, 22, 24, 0.8);
+  box-shadow: 3px 3px 6px 3px rgba(57, 62, 65, 0.5);
 }
 .future-temp {
   margin: 4px;
