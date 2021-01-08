@@ -12,6 +12,7 @@ body {
 }
 h1 {
   text-align: center;
+  font-family: "Amaranth", sans-serif;
   font-size: 45px;
   margin: 10px;
   padding: 10px 15px 0px;
@@ -25,7 +26,7 @@ h1:hover {
   width: 100%;
   margin-top: 40px;
   margin-bottom: 10px;
-  padding: 10px 5px;
+  padding: 10px 15px;
   border: 1px solid grey;
   border-radius: 10px;
   font-family: "Raleway", sans-serif;
@@ -127,6 +128,7 @@ h2 {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
+  font-family: "Amaranth", sans-serif;
 }
 .cards-forecast {
   text-align: center;
