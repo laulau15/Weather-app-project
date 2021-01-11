@@ -48,6 +48,12 @@ function showWeather(response) {
   let aspect = response.data.weather[0].description;
   let weatherAspect = document.querySelector("#weather-aspect");
   weatherAspect.innerHTML = aspect;
+
+  let emoji = response.data.weather[0].icon;
+  console.log(emoji);
+  let weatherIcon=document.querySelector("#weather-icon");
+  weatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${emoji}@2x.png`);
+  weatherIcon.setAttribute("alt",`${aspect}`); 
 }
 
 function searchCity(city) {
@@ -84,7 +90,6 @@ buttonLocation.addEventListener("click", currentPosition);
 
 //Forecast
 function weatherForecast(response) {
-  console.log(response);
   let tomorrowTemp = document.querySelector("#tomorrow-temp");
   tomorrowTemp.innerHTML = `${Math.round(response.data.list[5].main.temp)}°C`;
 }
