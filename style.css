@@ -91,6 +91,7 @@ li {
 }
 #weather-aspect {
   text-transform: capitalize;
+  font-size: 20px;
 }
 a {
   outline: none;

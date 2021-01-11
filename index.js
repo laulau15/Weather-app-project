@@ -50,7 +50,6 @@ function showWeather(response) {
   weatherAspect.innerHTML = aspect;
 
   let emoji = response.data.weather[0].icon;
-  console.log(emoji);
   let weatherIcon=document.querySelector("#weather-icon");
   weatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${emoji}@2x.png`);
   weatherIcon.setAttribute("alt",`${aspect}`); 
