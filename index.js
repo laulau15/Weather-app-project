@@ -51,8 +51,8 @@ function showWeather(response) {
 
   let emoji = response.data.weather[0].icon;
   let weatherIcon=document.querySelector("#weather-icon");
-  weatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${emoji}@2x.png`);
   weatherIcon.setAttribute("alt",`${aspect}`); 
+  weatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${emoji}@2x.png`);
 }
 
 function searchCity(city) {
@@ -71,6 +71,27 @@ let place = document.querySelector("#form-city");
 place.addEventListener("submit", searchedPlace);
 
 searchCity("Paris");
+
+//Fahrenheit
+
+function fahrenheitWeather(location) {
+  let apiKey = "94b2fe75b3990cc22ffb26dbd43023bc";
+  let cityFahrenheit = location;
+  let fUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityFahrenheit}&appid=${apiKey}&units=imperial`;
+  axios.get(`${fUrl}`).then(showWeather);
+}
+function fahrenheitPlace (event){
+  event.preventDefault()
+  let location = document.querySelector("#search-engine").value;
+  fahrenheitWeather(location)
+}
+let unitFahrenheit=document.querySelector("#fahrenheit-temp");
+unitFahrenheit.addEventListener("click", fahrenheitPlace);
+
+//Back to Celsius
+
+let unitCelsius=document.querySelector("#celsius-temp");
+unitCelsius.addEventListener("click",searchedPlace);
 
 //Your position
 function showPositionWeather(position) {
