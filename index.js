@@ -108,6 +108,27 @@ function currentPosition(event) {
 let buttonLocation = document.querySelector("#position");
 buttonLocation.addEventListener("click", currentPosition);
 
+//Position Fahrenheit
+
+function showPositionWeatherFahrenheit(position) {
+  let apiKey = "94b2fe75b3990cc22ffb26dbd43023bc";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(`${url}`).then(showWeather);
+}
+
+function currentPositionFahrenheit(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPositionWeatherFahrenheit);
+}
+
+let positionFahrenheit=document.querySelector("#fahrenheit-temp");
+positionFahrenheit.addEventListener("click",currentPositionFahrenheit);
+
+//Back to Celsius
+
+let backCelsius=document.querySelector("#celsius-temp");
+backCelsius.addEventListener("click",currentPosition);
+
 //Forecast
 function weatherForecast(response) {
   let tomorrowTemp = document.querySelector("#tomorrow-temp");
