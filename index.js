@@ -53,6 +53,11 @@ function showWeather(response) {
   let weatherIcon=document.querySelector("#weather-icon");
   weatherIcon.setAttribute("alt",`${aspect}`); 
   weatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${emoji}@2x.png`);
+
+  
+  unitFahrenheit.classList.remove("active");
+  unitCelsius.classList.add("active");
+  
 }
 
 function searchCity(city) {
@@ -99,6 +104,9 @@ function showWeatherFahrenheit(response) {
   let weatherIcon=document.querySelector("#weather-icon");
   weatherIcon.setAttribute("alt",`${aspect}`); 
   weatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${emoji}@2x.png`);
+
+  unitFahrenheit.classList.add("active");
+  unitCelsius.classList.remove("active");
 }
 
 function fahrenheitWeather(location) {

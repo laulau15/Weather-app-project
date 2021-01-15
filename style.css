@@ -106,22 +106,19 @@ li {
   font-size: 20px;
 }
 a {
-  outline: none;
-  text-decoration: none;
   padding: 2px 1px 0;
+  font-size: 15px;
+  position: relative;
+  top: -8px;
+  color: orange;
 }
-
-a:link {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  border-bottom: 1px solid;
-  background: rgb(207, 212, 203);
+.place-situation .active {
+  text-decoration: none;
+  cursor: default;
+  color: #212529;
+  font-size: 25px;
+  position: relative;
+  top: 0px;
 }
 .hour {
   font-size: 25px;
@@ -162,4 +159,11 @@ h2 {
 p {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+.git-link {
+  color: #212529;
+  position: relative;
+  top: 0px;
+  font-size: 16px;
 }
