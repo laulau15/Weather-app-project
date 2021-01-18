@@ -148,6 +148,14 @@ h2 {
 .col:hover {
   box-shadow: 3px 3px 6px 3px rgba(57, 62, 65, 0.5);
 }
+#tomorrow-description,
+#two-day-description,
+#three-day-description,
+#four-day-description,
+#five-day-description {
+  text-transform: capitalize;
+  font-weight: bold;
+}
 .future-temp {
   margin: 4px;
   font-size: 16px;
