@@ -26,7 +26,6 @@ let date = document.querySelector("#current-date");
 date.innerHTML = `🕓 ${day} ${hours}:${minutes}`;
 
 //Temperature
-
 function showWeather(response) {
   console.log(response);
   let cityName = response.data.name;
@@ -57,6 +56,12 @@ function showWeather(response) {
   
   unitFahrenheit.classList.remove("active");
   unitCelsius.classList.add("active");
+
+  let latitude = response.data.coord.lat;
+  let longitude = response.data.coord.lon;
+  let apiKey= "94b2fe75b3990cc22ffb26dbd43023bc";
+  let forecastUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=metric`;
+axios.get(`${forecastUrl}`).then(displayForecast);
   
 }
 
