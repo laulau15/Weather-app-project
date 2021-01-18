@@ -110,7 +110,7 @@ a {
   font-size: 15px;
   position: relative;
   top: -8px;
-  color: orange;
+  color: rgb(25, 41, 95);
 }
 .place-situation .active {
   text-decoration: none;

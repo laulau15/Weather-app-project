@@ -166,6 +166,7 @@ backCelsius.addEventListener("click",currentPosition);
 
 //Forecast
 function weatherForecast(response) {
+  console.log(response);
   let tomorrowTemp = document.querySelector("#tomorrow-temp");
   tomorrowTemp.innerHTML = `${Math.round(response.data.list[5].main.temp)}°C`;
 }
@@ -187,3 +188,47 @@ let forecast = document.querySelector("#form-city");
 forecast.addEventListener("submit", forecastPlace);
 
 showForecast("Paris");
+
+
+//Forecast position
+function displayForecast(forecast){
+  console.log(forecast);
+let tomorrowTemp=document.querySelector("#tomorrow-temp");
+tomorrowTemp.innerHTML=`${Math.round(forecast.data.daily[1].feels_like.day)}°C`;
+let tomorrowHumidity=document.querySelector("#tomorrow-humidity");
+tomorrowHumidity.innerHTML=` ${Math.round(forecast.data.daily[1].humidity)}`;
+
+let twoDayTemp=document.querySelector("#two-day-temp");
+twoDayTemp.innerHTML=`${Math.round(forecast.data.daily[2].feels_like.day)}°C`;
+let twoDayHumidity=document.querySelector("#two-day-humidity");
+twoDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[2].humidity)}`;
+
+let threeDayTemp=document.querySelector("#three-day-temp");
+threeDayTemp.innerHTML=`${Math.round(forecast.data.daily[3].feels_like.day)}°C`;
+let threeDayHumidity=document.querySelector("#three-day-humidity");
+threeDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[3].humidity)}`;
+
+let fourDayTemp=document.querySelector("#four-day-temp");
+fourDayTemp.innerHTML=`${Math.round(forecast.data.daily[4].feels_like.day)}°C`;
+let fourDayHumidity=document.querySelector("#four-day-humidity");
+fourDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[4].humidity)}`;
+
+let fiveDayTemp=document.querySelector("#five-day-temp");
+fiveDayTemp.innerHTML=`${Math.round(forecast.data.daily[5].feels_like.day)}°C`;
+let fiveDayHumidity=document.querySelector("#five-day-humidity");
+fiveDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[5].humidity)}`;
+}
+
+function showPositionForecast(position){
+let apiKey="94b2fe75b3990cc22ffb26dbd43023bc";
+let forecastUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
+axios.get(`${forecastUrl}`).then(displayForecast);
+}
+
+function positionForecast(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPositionForecast);
+}
+
+let btnLocation = document.querySelector("#position");
+btnLocation.addEventListener("click", positionForecast);
