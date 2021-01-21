@@ -82,14 +82,14 @@ place.addEventListener("submit", searchedPlace);
 
 searchCity("Paris");
 
+//Temperature in Fahrenheit
+
 function fahrenheitPlace (event){
   event.preventDefault();
   let transformTemperature=document.querySelector("#temp");
   let fahrenheitTemperature=Math.round(temperature * 1.8 + 32);
-
   transformTemperature.innerHTML=`🌡️ ${fahrenheitTemperature}`;
-  console.log(fahrenheitTemperature);
-  
+
   unitFahrenheit.classList.add("active");
   unitCelsius.classList.remove("active");
 
@@ -105,8 +105,6 @@ function backToCelsius(){
   let temperatureElement = document.querySelector("#temp");
   let tempBackToCelsius = Math.round(((temperature * 1.8 + 32)-32)/1.8);
   temperatureElement.innerHTML=`🌡️${tempBackToCelsius}`;
-  console.log(tempBackToCelsius);
-  console.log(temperatureElement);
   unitFahrenheit.classList.remove("active");
   unitCelsius.classList.add("active");
 }
@@ -123,66 +121,82 @@ function showPositionWeather(position) {
 let forecastUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
 axios.get(`${forecastUrl}`).then(displayForecast);
 }
-
 function currentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPositionWeather);
 }
-
 let buttonLocation = document.querySelector("#position");
 buttonLocation.addEventListener("click", currentPosition);
 
 
 //Forecast 
 function displayForecast(forecast){
+  console.log(forecast);
 let tomorrowTemp=document.querySelector("#tomorrow-temp");
 tomorrowTemp.innerHTML=`${Math.round(forecast.data.daily[1].feels_like.day)}°C`;
+let tomorrowIcon= document.querySelector("#tomorrow-icon");
+let tomorrowEmoji=forecast.data.daily[1].weather[0].icon;
+tomorrowIcon.setAttribute("src",`http://openweathermap.org/img/wn/${tomorrowEmoji}@2x.png`);
 let tomorrowHumidity=document.querySelector("#tomorrow-humidity");
 tomorrowHumidity.innerHTML=` ${Math.round(forecast.data.daily[1].humidity)}`;
 let tomorrowWind=document.querySelector("#tomorrow-wind");
 tomorrowWind.innerHTML=`${Math.round(forecast.data.daily[1].wind_speed)}`;
-
 let tomorrowAspect=document.querySelector("#tomorrow-description");
 tomorrowAspect.innerHTML=`${forecast.data.daily[1].weather[0].description}`;
+tomorrowIcon.setAttribute("alt",`${forecast.data.daily[1].weather[0].description}`);
 
 let twoDayTemp=document.querySelector("#two-day-temp");
 twoDayTemp.innerHTML=`${Math.round(forecast.data.daily[2].feels_like.day)}°C`;
+let secondIcon= document.querySelector("#two-day-icon");
+let secondEmoji=forecast.data.daily[2].weather[0].icon;
+secondIcon.setAttribute("src",`http://openweathermap.org/img/wn/${secondEmoji}@2x.png`);
 let twoDayHumidity=document.querySelector("#two-day-humidity");
 twoDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[2].humidity)}`;
 let twoDayWind=document.querySelector("#two-day-wind");
 twoDayWind.innerHTML=`${Math.round(forecast.data.daily[2].wind_speed)}`;
 let twoDayAspect=document.querySelector("#two-day-description");
 twoDayAspect.innerHTML=`${forecast.data.daily[2].weather[0].description}`;
+secondIcon.setAttribute("alt",`${forecast.data.daily[2].weather[0].description}`);
 
 let threeDayTemp=document.querySelector("#three-day-temp");
 threeDayTemp.innerHTML=`${Math.round(forecast.data.daily[3].feels_like.day)}°C`;
+let thirdIcon= document.querySelector("#three-day-icon");
+let thirdEmoji=forecast.data.daily[3].weather[0].icon;
+thirdIcon.setAttribute("src",`http://openweathermap.org/img/wn/${thirdEmoji}@2x.png`);
 let threeDayHumidity=document.querySelector("#three-day-humidity");
 threeDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[3].humidity)}`;
 let threeDayWind=document.querySelector("#three-day-wind");
 threeDayWind.innerHTML=`${Math.round(forecast.data.daily[3].wind_speed)}`;
 let threeDayAspect=document.querySelector("#three-day-description");
 threeDayAspect.innerHTML=`${forecast.data.daily[3].weather[0].description}`;
+thirdIcon.setAttribute("alt",`${forecast.data.daily[3].weather[0].description}`);
 
 let fourDayTemp=document.querySelector("#four-day-temp");
 fourDayTemp.innerHTML=`${Math.round(forecast.data.daily[4].feels_like.day)}°C`;
+let fourthIcon= document.querySelector("#four-day-icon");
+let fourthEmoji=forecast.data.daily[4].weather[0].icon;
+fourthIcon.setAttribute("src",`http://openweathermap.org/img/wn/${fourthEmoji}@2x.png`);
 let fourDayHumidity=document.querySelector("#four-day-humidity");
 fourDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[4].humidity)}`;
 let fourDayWind=document.querySelector("#four-day-wind");
 fourDayWind.innerHTML=`${Math.round(forecast.data.daily[4].wind_speed)}`;
 let fourDayAspect=document.querySelector("#four-day-description");
 fourDayAspect.innerHTML=`${forecast.data.daily[4].weather[0].description}`;
+fourthIcon.setAttribute("alt",`${forecast.data.daily[4].weather[0].description}`);
 
 let fiveDayTemp=document.querySelector("#five-day-temp");
 fiveDayTemp.innerHTML=`${Math.round(forecast.data.daily[5].feels_like.day)}°C`;
+let fithIcon= document.querySelector("#five-day-icon");
+let fithEmoji=forecast.data.daily[5].weather[0].icon;
+fithIcon.setAttribute("src",`http://openweathermap.org/img/wn/${fithEmoji}@2x.png`);
 let fiveDayHumidity=document.querySelector("#five-day-humidity");
 fiveDayHumidity.innerHTML=` ${Math.round(forecast.data.daily[5].humidity)}`;
 let fiveDayWind=document.querySelector("#five-day-wind");
 fiveDayWind.innerHTML=`${Math.round(forecast.data.daily[5].wind_speed)}`;
 let fiveDayAspect=document.querySelector("#five-day-description");
 fiveDayAspect.innerHTML=`${forecast.data.daily[5].weather[0].description}`;
+fithIcon.setAttribute("alt",`${forecast.data.daily[5].weather[0].description}`);
 }
-
-
 
 let temperature="";
 let windSpeed="";
