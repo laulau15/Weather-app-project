@@ -112,7 +112,8 @@ a {
   top: -8px;
   color: rgb(25, 41, 95);
 }
-.place-situation .active {
+.place-situation .active,
+.git-link {
   text-decoration: none;
   cursor: default;
   color: #212529;
@@ -155,10 +156,10 @@ h2 {
 #five-day-description {
   text-transform: capitalize;
   font-weight: bold;
+  font-size: 14px;
 }
 .future-temp {
   margin: 4px;
-  font-size: 16px;
 }
 .future-conditions {
   font-size: 15px;
@@ -167,11 +168,14 @@ h2 {
 p {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
-  font-size: 16px;
 }
 .git-link {
   color: #212529;
   position: relative;
   top: 0px;
+}
+.git-link,
+.future-temp,
+p {
   font-size: 16px;
 }
