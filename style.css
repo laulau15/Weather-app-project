@@ -22,7 +22,6 @@ body {
   color: #183446;
 }
 h1 {
-  text-align: center;
   letter-spacing: 4px;
   font-size: 48px;
   margin: 10px;
@@ -37,17 +36,19 @@ h1:hover {
   width: 100%;
   margin-top: 30px;
   margin-bottom: 10px;
-  padding: 10px 15px;
-  border: 1px solid #dfe9f3;
   border-radius: 10px;
   font-family: "Raleway", sans-serif;
+}
+.click,
+.btn-location,
+#search-engine {
+  padding: 10px 15px;
+  border: 1px solid #dfe9f3;
   background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 .click,
 .btn-location {
   border-radius: 20px;
-  padding: 10px 15px;
-  border: 1px solid #dfe9f3;
   transition: 200ms all ease-in-out;
   margin-bottom: 20px;
   margin-right: 5px;
@@ -56,7 +57,6 @@ h1:hover {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   font-size: 14px;
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 @keyframes pulse {
   to {
@@ -124,11 +124,13 @@ a {
   font-size: 25px;
 }
 h2 {
-  text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
 }
-.cards-forecast {
+h1,
+h2,
+.cards-forecast,
+p {
   text-align: center;
 }
 .col {
@@ -172,7 +174,6 @@ h2 {
   font-weight: normal;
 }
 p {
-  text-align: center;
   font-family: "Courier New", Courier, monospace;
 }
 .git-link {
