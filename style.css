@@ -177,9 +177,9 @@ p {
   font-family: "Courier New", Courier, monospace;
 }
 .git-link {
-  color: #212529;
   position: relative;
   top: 0px;
+  cursor: pointer;
 }
 .git-link,
 .future-temp,
