@@ -120,10 +120,13 @@ function showPositionWeather(position) {
 
 let forecastUrl= `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
 axios.get(`${forecastUrl}`).then(displayForecast);
+unitFahrenheit.classList.remove("active");
+  unitCelsius.classList.add("active");
 }
 function currentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPositionWeather);
+  
 }
 let buttonLocation = document.querySelector("#position");
 buttonLocation.addEventListener("click", currentPosition);
